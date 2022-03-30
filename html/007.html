@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text-level semantics</title>
+  </head>
+  <body>
+    <!-- Text-level semantics -->
+
+    <p style="white-space: nowrap">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      <br />
+      Molestiae magni ea earum quibusdam, eligendi nam qui delectus asperiores
+      voluptatem. Dolores sit, doloribus omnis voluptate alias numquam fugiat
+      officia culpa repellat.
+    </p>
+    <!-- wbr 태그는 텍스트 박스에서 한 줄로 모두 표시가 안될 때에만 줄바꿈 -->
+    <p>Lorem ipsum dolor sit amet <wbr />consectetur,</p>
+    <p>
+      Lorem ipsum dolor sit amet <wbr />consectetur, adipisicing elit.
+      <br />
+      Molestiae magni ea earum quibusdam, eligendi nam qui delectus asperiores
+      voluptatem. Dolores sit, doloribus omnis voluptate alias numquam fugiat
+      officia culpa repellat.
+    </p>
+
+    <!-- 
+        a 태그는 하이퍼 텍스트 즉, 링크를 만들 때 사용 
+        자바스크립트로 경로를 지정할 수도 있지만 이는 웹 접근성에 위배됨으로 href 속성으로 경로 지정
+        sections, grouping content 요소들은 텍스트 레벨 요소의 자식으로 사용되지 않지만, 앵커 태그만 예외적으로 sections, grouping content 요소를 자식으로 하는것이 허용
+        <a> 요소안의 자식으로는 <a> 요소나 <button> 과 같이 사용자와 인터렉션이 가능한 요소를 자식으로 두지 않음
+    -->
+    <a href="https://www.naver.com">click</a>
+    <a href="https://www.naver.com" target="_blank">click</a>
+    <a href="./index.html">click</a>
+    <a href="#three">click</a>
+    <!-- 해쉬 링크 -->
+    <!-- Internet Explorer 는 download 속성을 지원하지 않음 -->
+    <a href="./index.html" download>click</a>
+    <a href="./hello.hwp">hwp click</a>
+    <a href="./hello.hwp" download="a.hwp">hwp download click</a>
+    <a href="./hello.pdf">pdf click</a>
+    <a href="./hello.pdf" download="a.pdf">pdf download click</a>
+
+    <!-- 굵은 글씨 -->
+    <!-- b태그: 의미 없음 / strong: 중요도 강조 -->
+    <p>
+      <strong>hello</strong>
+      adipisicing <b>elit</b>
+    </p>
+
+    <!-- 기울임 글꼴 -->
+    <!-- i 태그: 주 언어와 다른 언어로 표현된 부분 / em 태그: 강조의 의미 -->
+    <p>시장안은 사람들의 활기로 가득차 있었다.</p>
+    <p>
+      상인 : 이 상품은 현재 <em>30%</em> 할인중입니다! 나 : 아하 그렇군요!
+      <i> '흠.. 왜 하필 지금 할인하는걸까?!' </i> 좀 더 구경하고 올게요!
+    </p>
+    <p>나는 상인의 의도를 의심할 수 밖에 없었다.</p>
+
+    <!-- 가장 가까운 부모가 <p> 혹은 <dt><dd> 쌍, <section> 요소일 경우 그 컨텐츠를 dfn의 정의에 대한 설명으로 간주 -->
+    <!-- <abbr> 태그는 준말, 약자를 나타내고 싶을 때  -->
+    <dl>
+      <dt>WWW</dt>
+      <dd>
+        <dfn><abbr title="World Wide Web">WWW</abbr></dfn
+        >는 인터넷에 연결된 컴퓨터를 통해 사람들이 정보를 공유할 수 있는 전
+        세계적인 정보 공간을 말한다. - 위키백과
+      </dd>
+    </dl>
+
+    <!-- <sup> 태그는 윗첨자,  <sub> 태그는 아랫첨자
+        화학기호나 수학공식 등 첨자 기호를 이용 -->
+    <p>H<sub>2</sub>0</p>
+    <p>x<sup>2</sup>=4</p>
+
+    <!-- span
+    별다른 의미 없이 보통 줄 바꿈 없이 영역을 묶는 용도
+    div와 마찬가지로 최후 수단으로 사용 -->
+    <style>
+      #명언 {
+        color: red;
+      }
+    </style>
+    ...중략...
+    <p>
+      <span id="명언">제발 그만해.. 이러다 다~~ 죽어!</span>라고 오일남이
+      소리쳤습니다.
+    </p>
+    <p></p>
+  </body>
+</html>
