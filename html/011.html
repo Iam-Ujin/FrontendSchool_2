@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iframe</title>
+  </head>
+  <body>
+    <!-- iframe은 현재 html 페이지에서 또 다른 HTML페이지를 보여주고 싶을 때 사용
+      width, height 값을 설정하지 않으면 기본값 300px, 150px -->
+    <!-- frameborder: 0 혹은 1 값, 현재 사용X, css border속성으로 대체
+      allow: iframe에서 허용할 기능 지정
+      allowfullscreen: 전체화면 지원
+      ! autoplay 속성은 브라우저 정책 상 일부 모바일 브라우저에 작동하지 않을 수 있음, 항상 mute속성과 함께 사용 (iframe, audio, video 요소 모두 동일 적용) -->
+    <iframe
+      width="894"
+      height="503"
+      src="https://www.youtube.com/embed/POJ5S2aUizA"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+    <iframe
+      width="1000px"
+      height="500px"
+      src="http://paullab.co.kr/"
+      frameborder="0"
+    ></iframe>
+  </body>
+</html>
