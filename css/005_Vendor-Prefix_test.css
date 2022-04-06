@@ -1,0 +1,7 @@
+p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/* Autoprefixer 익스텐션 test 
+저장시 벤더프리픽스 코드 자동완성*/
