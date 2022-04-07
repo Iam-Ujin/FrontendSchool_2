@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>그외 단위</title>
+    <style>
+      body {
+        margin: 0;
+        background-color: salmon;
+      }
+      div.a {
+        background-color: white;
+        width: 50vmin; /* 뷰포트에서 짧은 쪽 기준 n%, 모바일에서 많이 사용 */
+        height: 50vmin;
+      }
+      div.b {
+        background-color: seagreen; /* 뷰포트에서 긴 쪽 기준 n%  */
+        width: 50vmax;
+        height: 50vmax;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="a"></div>
+    <div class="b"></div>
+  </body>
+</html>
