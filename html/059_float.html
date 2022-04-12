@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .wrap {
+        border: 4px solid blue;
+        /* overflow: hidden; 부모요소에 overflow속성을 추가하여 자식을 인식하게함 */
+        /* 자식요소가 부모영역을 넘어가면 문제가 생김 */
+      }
+
+      .wrap::after {
+        content: "";
+        display: block; /* 가상요소는 기본적으로 인라인 요소임 */
+        clear: both; /* 자식요소를 하나 만들어서 CLEAR속성을주는것과 같음, 해제하는 속성애 따라 값을주면 됨 */
+      }
+
+      .content {
+        float: left;
+        margin: 5px;
+        height: 20px;
+        border: 2px solid green;
+      }
+
+      .content2 {
+        /* float: left; */ /* 형제요소가 float된 형제요소를 인식하지 못함 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="content content2">내용1</div>
+      <div class="content">내용2</div>
+    </div>
+  </body>
+</html>
