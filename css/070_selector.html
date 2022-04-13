@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>가상클래스 선택자 :</title>
+    <style>
+      /* .foo:nth-child(1) {
+        color: red;
+      }
+      .foo:nth-child(2) {
+        color: red;
+      }
+      .foo:nth-child(3) {
+        color: red;
+      } */
+
+      /* .foo:nth-child(2n-1) {
+        color: royalblue;
+      }
+
+      .foo:nth-child(2n) {
+        color: seagreen;
+      } */
+
+      /* .foo:nth-child(2n-1) {
+        color: slateblue;
+      }
+
+      .foo:nth-child(even) {
+        color: springgreen;
+      } */
+
+      .foo:nth-child(odd) {
+        color: tomato;
+      }
+
+      .foo:nth-child(3n + 1) {
+        color: rgb(137, 202, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <li class="foo">1</li>
+    <li class="foo">2</li>
+    <li class="foo">3</li>
+    <li class="foo">4</li>
+    <li class="foo">5</li>
+  </body>
+</html>
