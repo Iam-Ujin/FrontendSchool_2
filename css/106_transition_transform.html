@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style>
+      @keyframes 두근두근 {
+        10% {
+          transform: scale(1);
+        }
+        25% {
+          transform: scale(2);
+        }
+        50% {
+          transform: scale(1);
+        }
+        75% {
+          transform: scale(2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      div.container {
+        margin: 100px;
+        position: relative;
+        width: 100px;
+        height: 150px;
+      }
+
+      div.left {
+        position: absolute;
+        left: 50px;
+        background-color: hotpink;
+        width: 100px;
+        height: 150px;
+        border-radius: 52% 48% 100% 0% / 39% 39% 61% 61%;
+
+        /* transition: all 1s cubic-bezier(0.06,-1.51, 0.68, 2.42); */
+        transition: width 0.3s;
+        transition-delay: 1s;
+      }
+
+      div.right {
+        position: absolute;
+        right: 50px;
+        background-color: hotpink;
+        width: 100px;
+        height: 150px;
+        border-radius: 52% 48% 0% 100% / 39% 39% 61% 61%;
+
+        /* transition: all 1s cubic-bezier(0.06,-1.51, 0.68, 2.42); */
+        transition: width 0.3s;
+        transition-delay: 1s;
+      }
+
+      div.container:hover {
+        animation: 두근두근 1s infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left"></div>
+      <div class="right"></div>
+    </div>
+  </body>
+</html>
