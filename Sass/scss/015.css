@@ -1,0 +1,12 @@
+.card {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+.card .card_ {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+}
+/*# sourceMappingURL=015.css.map */

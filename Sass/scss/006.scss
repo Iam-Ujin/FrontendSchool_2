@@ -1,0 +1,11 @@
+// at_root
+
+.one {
+  color: red;
+  .two {
+    color: blue;
+    @at-root .three {
+      color: green;
+    }
+  }
+}

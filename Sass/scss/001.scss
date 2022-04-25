@@ -1,0 +1,18 @@
+// 주석과 nesting
+// 한 줄 주석입니다
+/* 두 줄 주석입니다 */
+// 한 줄 주석은 css로 바뀔 때 사라짐
+ul {
+  li {
+    color: red;
+    font-size: 10px;
+  }
+}
+
+.one {
+  color: red;
+
+  .two {
+    color: green;
+  }
+}

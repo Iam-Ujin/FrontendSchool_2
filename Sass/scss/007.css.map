@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAMA,AAAA,IAAI,CAAC;EACH,KAAK,EALC,IAAI;CAMX;;AAED,AAAA,IAAI,CAAC;EACH,KAAK,EARC,MAAM;CASb;;AAED,AAAA,MAAM,CAAC;EACL,KAAK,EAXA,IAAI;CAYV",
+    "sources": [
+        "007.scss"
+    ],
+    "names": [],
+    "file": "007.css"
+}

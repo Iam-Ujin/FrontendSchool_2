@@ -1,0 +1,17 @@
+// 변수선언
+
+$ujin1: pink;
+$ujin2: purple;
+$유진: gray;
+
+.one {
+  color: $ujin1;
+}
+
+.two {
+  color: $ujin2;
+}
+
+.three {
+  color: $유진;
+}

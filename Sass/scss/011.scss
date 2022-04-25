@@ -1,0 +1,14 @@
+// 변수의 scope
+$value: green;
+
+.one {
+  $value: red !global;
+  color: $value;
+  .two {
+    color: $value;
+  }
+}
+
+.three {
+  color: $value;
+}

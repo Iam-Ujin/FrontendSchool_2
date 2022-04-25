@@ -1,0 +1,5 @@
+@for $ujin from 1 through 7 {
+  .photo-box:nth-child(#{$ujin}) {
+    background-image: url();
+  }
+}
