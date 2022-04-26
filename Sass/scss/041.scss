@@ -1,0 +1,8 @@
+$color-paletter: red green blue black;
+@each $color in $color-paletter {
+  .color-circle-#{$color} {
+    background-color: $color;
+    width: 20px;
+    height: 20px;
+  }
+}

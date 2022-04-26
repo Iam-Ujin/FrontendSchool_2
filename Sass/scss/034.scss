@@ -1,0 +1,10 @@
+@mixin custom-button($width, $height) {
+  width: $width;
+  height: $height;
+  border-radius: 10px;
+}
+//코드를 재사용하기위함 , 다른언어에서 함수와 같은 사용, but 함수는 return값이 반영되는 반면 mixin은 코드블럭을 재사용하는 것!
+
+.btn {
+  @include custom-button(100px, 30px);
+}
