@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>string</title>
+  </head>
+  <body>
+    <script>
+      // 문자열 (String)
+
+      let txt = "ABCDEFGHIJKLMNABC";
+      let text_two = "mom said \'hello world\'";
+      let text_three = "mom said 'hello world'"
+      let number = "100"; // "100avdsjglkdsj"
+
+      document.write(number + number, '<br>');
+      document.write(Number(number) + Number(number), '<br>');
+      document.write(parseInt(number) + parseInt(number), '<br>');
+      document.write(+number + +number, '<br><br>');
+
+      document.write(`txt : ${txt} <br>`);
+      document.write(` ${number} + ${number} = ${number * 2}<br><br>`);
+
+      document.write(`txt.length : ${txt.length} <br>`)
+      document.write(`txt[1] : ${txt[1]} <br><br>`)
+
+      document.write(txt.indexOf("F"), '<br>');
+      document.write(`txt.indexOf("F") : ${txt.indexOf("F")}<br>`);
+      document.write(`txt.search("F") : ${txt.search("F")} <br>`);
+
+      document.write(`txt.indexOf("G") : ${txt.indexOf("G")} <br>`);
+      document.write(`txt.search("G") : ${txt.search("G")} <br>`);
+      document.write(`txt.indexOf("Z") : ${txt.indexOf("Z")} <br>`);
+      document.write(`txt.search("Z") : ${txt.search("Z")} <br> <br>`);
+
+      let regExp = /CD/;
+      document.write(`txt.search(regExp) : ${txt.search(regExp)}<br><br>`);
+
+      document.write(`txt.lastIndexOf : ${txt.lastIndexOf("F")} <br>`);
+      document.write(`txt.lastIndexOf : ${txt.lastIndexOf("B")} <br><br>`);
+      document.write(`txt.indexOf : ${txt.indexOf("B")} <br>`);
+      document.write(`txt.lastIndexOf : ${txt.lastIndexOf("B")} <br><br>`);
+
+      document.write(txt[0] + txt[1] + txt[2] , '<br>');
+      // slice(시작인덱스, 종료인덱스) : 시작인덱스부터 종료인덱스 -1 까지 반환한다.
+      // substring : slice와 같음
+      // substr(시작위치, 길이) : 시작인덱스부터 길이만큼 반환
+      document.write(`txt.slice(0, 3) : ${txt.slice(0, 3)}<br>`);
+      document.write(`txt.substring(0, 3) : ${txt.substring(0, 3)}<br>`);
+      document.write(`txt.substr(0, 5) : ${txt.substr(0, 5)}<br><br>`);
+
+      document.write('abcdef'.replace('cde', 'ujin'), '<br>');
+      document.write(`txt.replace('ABC', 'ujin') : ${txt.replace(/ABC/g, 'ujin')}<br><br>`);
+
+      document.write(`txt.toUpperCase() : ${txt.toUpperCase()}<br>`)
+      document.write(`txt.toLowerCase() : ${txt.toLowerCase()}<br><br>`)
+
+      document.write(txt.includes('Z'), '<br>');
+      document.write(txt.includes('BC'), '<br><br>');
+
+      document.write(txt.startsWith('BCD'), '<br>');
+      document.write(txt.startsWith('ABC'), '<br>');
+      document.write(txt.endsWith('AB'), '<br>');
+      document.write(txt.endsWith('ABC'), '<br>');
+
+      document.write('<br><br><hr><br><br>')
+
+      // 문맥을 봐야한다!
+      document.write(number + number, '<br>');
+      document.write(number + 10, '<br>');
+      document.write(number - 10, '<br>');
+      document.write(number * 10, '<br><br>');
+
+      document.write(typeof(number), '<br>');
+      document.write(typeof(+number), '<br>');
+      document.write(typeof(null), '<br>'); // 심각
+      document.write(typeof(NaN), '<br>'); // 심각
+      document.write(typeof(Infinity), '<br>');
+      document.write(typeof([]), '<br>'); // 심각
+      document.write(typeof({}), '<br>');
+      document.write(typeof(''), '<br>');
+      document.write(typeof(0), '<br><br>');
+
+      console.log(0 + '');
+      console.log(Infinity + '');
+      console.log(true + '');
+      console.log({} + ''); // 심각
+      console.log(({}) + ''); // 심각
+      console.log([] + ''); // 심각
+      console.log([1, 2, 3, 4] + '') // 심각
+</script>
+  </body>
+</html>
