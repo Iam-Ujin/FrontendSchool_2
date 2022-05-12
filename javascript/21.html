@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+
+    </title>
+    <style>
+        .color-box { 
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            background-color: beige;
+        }
+
+        .btn-cnt {
+            display: flex;
+            justify-content: space-around;
+            width: 500px;
+            margin: 50px auto 0;
+            margin-top: 20px;
+            width: 200px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .green {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="color-box"></div>
+    <div class="btn-cnt">
+        <button class="red-btn">빨강</button>
+        <button class="yellow-btn">노랑</button>
+        <button class="green-btn">초록</button>
+    </div>
+    <script>
+        const redBtn = document.querySelector(".red-btn")
+        const yellowBtn = document.querySelector(".yellow-btn")
+        const greenBtn = document.querySelector(".green-btn")
+
+        const colorBox = document.querySelector(".color-box")
+
+        redBtn.addEventListener('click', () => {
+            colorBox.classList.remove("yellow", "green");
+            colorBox.classList.toggle("red");
+        })
+
+        yellowBtn.addEventListener('click', () => {
+            colorBox.classList.remove("red", "green");
+            colorBox.classList.toggle("yellow");
+        })
+
+        greenBtn.addEventListener('click', () => {
+            colorBox.classList.remove("yellow", "red");
+            colorBox.classList.toggle("green");
+        })
+    </script>
+</body>
+</html>
