@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      // ```
+      // const me = {
+      //   name: "한재현",
+      //   address: "제주도 제주시 인다 1길",
+      //   phoneNum: "010-8001-6536",
+      //   canWalk: function () {
+      //     console.log("재현이가 걷는다.");
+      //   },
+      //   teaching: function (student) {
+      //     student.levelUp();
+      //   },
+      // };
+      // ```
+
+      //prototype 으로 빼주기
+      function Me(name, address, phoneNum) {
+        this.name = name;
+        this.address = address;
+        this.phoneNum = phoneNum;
+      }
+
+      Me.prototype.canWalk = function () {
+        console.log("재현이가 걷는다.");
+      };
+
+      Me.prototype.teaching = function (student) {
+        student.levelUp();
+      };
+
+      function Student(level) {
+        this.level = level;
+      }
+
+      Student.prototype.levelUp = function () {
+        this.level++;
+      };
+
+      // const student = {
+      //   level: 1,
+      //   levelUp: function () {
+      //     this.level++;
+      //   },
+      // };
+
+      //   me.teaching(student);
+
+      ```
+      const jaehyun = new Me('재현', '주소','폰번');
+
+      const yujin = new Student(1);
+  
+      yujin.levelUp()
+
+      yujin.level
+      2
+      
+      jaehyun.teaching(yujin)
+
+      yujin.level
+      3
+
+      ```;
+      const ujin = {
+        name: "전유진",
+        job: "쯔쯔집사",
+        feeding: function (zZ) {
+          zZ.chur();
+        },
+      };
+
+      const zZ = {
+        happy: "💙",
+        chur: function () {
+          this.happy += "💙";
+        },
+      };
+
+      //   ujin.feeding(zZ);
+    </script>
+  </body>
+</html>
