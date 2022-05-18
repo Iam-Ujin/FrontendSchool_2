@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      const foods = [
+        "떡볶이",
+        "피자",
+        "탕수육",
+        "치킨",
+        "닭발",
+        "순대국밥",
+        "파스타",
+        "돼지김치찜",
+        "삼겹살",
+      ];
+
+      class FoodBot {
+        constructor(foodNames) {
+          this.menu = foodNames;
+        }
+
+        sayMenu() {
+          const randomMenu =
+            this.menu[Math.floor(Math.random() * this.menu.length)];
+          console.log(`오늘의 점심 메뉴는 ${randomMenu} 너로 정했다!`);
+        }
+      }
+
+      const foodBotMark1 = new FoodBot(foods);
+      const 은비_LunchMenU = new FoodBot(foods);
+      const 다솜_LunchMenU = new FoodBot(foods);
+    </script>
+  </body>
+</html>

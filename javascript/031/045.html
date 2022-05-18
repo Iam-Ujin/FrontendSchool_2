@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      //   const flavors = [
+      //     "돼지고기맛",
+      //     "매운맛",
+      //     "단맛",
+      //     "파맛",
+      //     "마늘향",
+      //     "소금후추맛",
+      //     "올리브맛",
+      //     "카레맛",
+      //   ];
+
+      //   class MakeSausage {
+      //     constructor(flavors) {
+      //       const flavor1 =
+      //         this.flavors[Math.floor(Math.random() * this.flavors.length)];
+      //       const flavor2 =
+      //         this.flavors[Math.floor(Math.random() * this.flavors.length)];
+      //     }
+
+      //     saySausageTaste() {
+      //       console.log(
+      //         `내가 굽는 소세지의 맛은?!?!?!?!?! ${flavor1}과 ${flavor2}`
+      //       );
+      //     }
+      //   }
+
+      //   class FireSausage extends MakeSausage {
+      //     constructor(fireFlavors) {
+      //       super(fireFlavors);
+      //       this.ownName = "오리지널 소세지";
+      //     }
+
+      //     sayBabyName() {
+      //       this.saySausageTaste(fireFlavors);
+      //       console.log(
+      //         `으아아아아아아!!!! 갑자기 ${this.fireFlavors}이 난다아아아아아!!!!!!`
+      //       );
+      //     }
+      //   }
+
+      //   const 불맛 = new FireSausage("불맛");
+
+      class Sausage {
+        constructor(el1, el2) {
+          this.inside1 = el1;
+          this.inside2 = el2;
+        }
+
+        taste() {
+          console.log(`${this.inside1}와 ${this.inside2}의 맛이 난다!!`);
+        }
+      }
+
+      const sausage = new Sausage("소고기", "돼지고기");
+
+      class FireSausage extends Sausage {
+        constructor(el1, el2, el3) {
+          super(el1, el2);
+          this.inside3 = el3;
+        }
+
+        taste() {
+          console.log(
+            `${this.inside1}와 ${this.inside2}의 맛이 난다!! 불맛도 난다!!`
+          );
+        }
+      }
+
+      const fireSausage = new FireSausage("소고기", "돼지고기");
+    </script>
+  </body>
+</html>

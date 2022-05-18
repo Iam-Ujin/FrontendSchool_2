@@ -42,7 +42,8 @@
       }
 
       FoodBot.prototype.sayMenu = function () {
-        this.menu[Math.floor(Math.random() * this.menu.length)];
+        const randomMenu =
+          this.menu[Math.floor(Math.random() * this.menu.length)];
         console.log(`오늘의 저녁 메뉴는 ${randomMenu} 너로 정했다!`);
       };
 

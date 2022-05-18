@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>투두리스트</title>
+    <!-- <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .box {
+            display: flex;
+            gap: 40px;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: space-between;
+            width: 220px;
+            min-height: 180px;
+            height: fit-content;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            border-radius: 10px;
+            padding: 20px 40px;
+        }
+    
+        .box>input:focus::placeholder {
+            color: transparent;
+        }
+    
+        .box__title {
+            margin: 0;
+        }
+    
+        .box__input {
+            height: 20px;
+            border: 0px;
+            border-bottom: 1px solid gray;
+        }
+    
+        .box__button {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+    
+        .box__button>button {
+            border: 0;
+            width: 80px;
+            height: 30px;
+            background-color: beige;
+            cursor: pointer;
+        }
+    
+        @keyframes zoom {
+            0% {
+                transform: scale(1.0);
+            }
+    
+            100% {
+                transform: scale(1.05);
+            }
+        }
+    
+        .box__button>button:hover {
+            animation: zoom 1s;
+            background-color: orange;
+            color: white;
+            transform: scale(1.05);
+        }
+    
+        #box__result {
+            height: 20px;
+            border: 0px;
+            background-color: gray;
+            color: white;
+            padding: 2px 5px;
+        }
+    </style> -->
+    </head>
+    
+    <body>
+        <!-- <form class="box" id="input">
+            <h2 class="box__title">오늘 뭐하지?🧐</h2>
+            <input class="box__input" type="text" name="input1" autocapitalize="off" autocorrect="off" autofocus="autofocus"
+                placeholder="입력항목1">
+            <div class="box__button">
+                <button type="submit">추가하기</button>
+            </div>
+        </form>
+        <div class="box" id="output">
+            <h2 class="box__title">할일이 태산😭</h2>
+            <div id="box__result"> </div>
+        </div> -->
+    </body>
+    <script>
+ 
+    // 간단한 투두 리스트기능 구현해보기
+    // 1. 해야할 일 Todo 클래스(내용, 상태 두 가지 프로퍼티를 가집니다.)
+    // 2. Todo 클래스는 상태를 변경하는 changeState 메서드를 가집니다.
+    // 3. 할일의 목록을 관리하는 관리자를 추상화한 TodoManager 클래스 (할일 목록을 프로퍼티로 가집니다.)
+    // 4. 할 일을 저장하고(addItem), 할 일의 목록을 보여주며(getItems), 할 일의 남은 갯수를 반환하는(getLeftTodoCount) 세 가지 메소드를 가집니다.
+
+
+
+    class ToDo {
+        constructor(contents, state) {
+            this.contents = contents;
+            this.state = state;
+
+        }
+
+        changeState() {
+            this.state = [...this.state, this.contents];
+        }
+    }
+
+    class TodoManager {
+        constructor(contents, state) {
+            this.contents = contents;
+            this.state = state;
+        }
+        addItem() {
+           this.state = [...this.state, this.contents];
+        }
+
+        getItems() {
+            console.log(`내가 할 일은 ${this.state}이다!`)
+        }
+
+        getLeftTodoCount() {
+            console.log(`남은 일의 갯수는 ${this.state.length}개 이다!`)
+        }
+    }
+
+    const toDoList = ['할일1', '할일2', '할일3', '할일4']
+    const toDoBot = new ToDo('새로운할일', toDoList)
+    const toDoMgrBot = new TodoManager('새로운할일', toDoList)
+
+      // --------------------------------------------
+      // --------------------------------------------
+      // --------------------------------------------
+      // 다희님 코드
+
+
+    //1.  해야할 일 Todo 클래스(내용, 상태 두 가지 프로퍼티를 가집니다.)
+    //    Todo 클래스는 상태를 변경하는 changeState 메서드를 가집니다.
+    class Todo {
+    constructor(context, isDone = false) {
+        this.context = context;
+        this.isDone = isDone;
+    }
+    // 메소드
+    changeState() {
+        this.isDone = this.isDone === false ? true : false;
+    }
+    }
+
+    // 3. 할일의 목록을 관리하는 관리자를 추상화한 TodoManager 클래스
+    //    (할일 목록을 프로퍼티로 가집니다.)
+    class TodoManager {
+    constructor(todos = []) {
+        this.todos = todos;
+    }
+    // addItem - 할 일을 저장
+    addItem(todo) {
+        this.todos.push(todo);
+    }
+    // getItems - 할 일의 목록을 보여줌
+    get getItem() {
+        return this.todos;
+    }
+    // getLeftTodoCount - 할 일의 남은 갯수
+    get getLeftTodoCount() {
+        return this.todos.filter(todo => todo.isDone === false).length;
+    }
+    }
+
+    const todo_rutin = new TodoManager();
+
+    todo_rutin.addItem(new Todo("스킨로션 바르기"));
+    </script>
+  </body>
+</html>
