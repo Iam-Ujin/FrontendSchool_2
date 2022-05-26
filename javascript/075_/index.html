@@ -30,23 +30,23 @@
         mainElement.classList.add("product");
         // console.log(mainElement)
 
-        // 1
-        mainElement.innerHTML = `
-                <h1 class="ir">상품목록 페이지</h1>
-                <ul class="product-list"></ul>
-            `;
+        // 방법1
+        // mainElement.innerHTML = `
+        //         <h1 class="ir">상품목록 페이지</h1>
+        //         <ul class="product-list"></ul>
+        //     `;
         // console.log(mainElement)
 
         // 2 아래 코드로 작성하면 더 좋지만, 여러분이 html이 익숙하기 때문에 innerHTML로 작성하였습니다. 맨 아래 있는 스크립트도 참고해주세요.
-        // const prodctPageHeader = document.createElement("h1");
-        // prodctPageHeader.setAttribute("class", "ir");
-        // prodctPageHeader.innerText = "상품목록 페이지";
-        // mainElement.appendChild(prodctPageHeader);
+        const prodctPageHeader = document.createElement("h1");
+        prodctPageHeader.setAttribute("class", "ir");
+        prodctPageHeader.innerText = "상품목록 페이지";
+        mainElement.appendChild(prodctPageHeader);
 
-        // const productList = document.createElement("ul");
-        // productList.setAttribute("class", "product-list");
-        // mainElement.appendChild(productList);
-        // console.log(mainElement)
+        const productList = document.createElement("ul");
+        productList.setAttribute("class", "product-list");
+        mainElement.appendChild(productList);
+        console.log(mainElement);
 
         const productList = mainElement.querySelector(".product-list");
 

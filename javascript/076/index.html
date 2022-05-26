@@ -1,0 +1,39 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>위니브 스토어</title>
+    <link
+      href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="src/style/style.css" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script>
+      const root = document.getElementById("root");
+      // console.log(root);
+
+      async function getProductData() {
+        const response = await fetch("http://test.api.weniv.co.kr/mall");
+        const product = await response.json();
+        return product;
+      }
+      // await을 안써주면 fetch데이터가 다 fetching되지 않았음에도 비동기 처리 되어 밑의 코드들이 먼저 실행되는 경우가 있다
+      // response라는 변수 안에 fetch된 Promise 객체를 넣는다.
+      // console.log(getProductData());
+
+      getProductData().then((product) => {
+        const mainElement = document.createElement("main");
+        // console.log(mainElement);
+        mainElement.classList.add("product");
+
+        const productPageHeader = document.createElement("h1");
+      });
+    </script>
+  </body>
+</html>
