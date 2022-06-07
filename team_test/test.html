@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <link
+      href="https://webfontworld.github.io/pretendard/Pretendard.css"
+      rel="stylesheet"
+    />
+    <title></title>
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        background: radial-gradient(
+          96.74% 276.79% at 3.59% 5.28%,
+          #f0f4ff 0%,
+          #a5b6ee 100%
+        );
+      }
+
+      .weniv-logo {
+        background-image: url(./img/weniv-logo.png) no-repeat;
+        margin: 72px auto 60px;
+      }
+
+      .timer-cnt {
+        position: absolute;
+        width: 400px;
+        height: 360px;
+        left: 440px;
+        top: 180px;
+        background: linear-gradient(144.07deg, #5572bb 2.13%, #374b7c 102.97%);
+        box-shadow: 20px 20px 60px 10px rgba(55, 75, 124, 0.4);
+        border-radius: 16px;
+        text-align: center;
+      }
+
+      .timer-title {
+        width: 73px;
+        height: 29px;
+        font-family: "Pretendard";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #ffffff;
+        margin: 0 auto;
+      }
+
+      .timer-line {
+        width: 312px;
+        height: 1px;
+        left: 484px;
+        top: 280px;
+        background: #3d538a;
+        margin: 0 auto;
+      }
+      .timer-line::after {
+        width: 312px;
+        height: 1px;
+        left: 484px;
+        top: 281px;
+        background: #5b75b4;
+        margin: 0 auto;
+      }
+
+      .time-cnt {
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      .time-item div {
+        box-sizing: border-box;
+        background: linear-gradient(314.28deg, #304577 0%, #4c65a0 83%);
+        border: 1px solid #354971;
+        border-radius: 4px;
+      }
+      .time-item div p {
+        margin: 16px 14px 16px 13px;
+        width: 53px;
+        height: 48px;
+        left: calc(50% - 53px / 2 - 0.5px);
+        bottom: 16px;
+        font-family: "Pretendard";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 48px;
+        text-align: center;
+        color: #ffffff;
+      }
+
+      button {
+        background: #324577;
+        box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.05);
+        border-radius: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="weniv-logo"></h1>
+
+    <article class="timer-cnt">
+      <h2 class="timer-title">timer</h2>
+
+      <div class="timer-line"></div>
+
+      <div class="time-cnt">
+        <div class="time-item">
+          <p>hrs</p>
+          <div class="hrs-count">00</div>
+        </div>
+        <div class="time-item">
+          <p>min</p>
+          <div class="min-count">00</div>
+        </div>
+        <div class="time-item">
+          <p>sec</p>
+          <div class="sec-count">00</div>
+        </div>
+      </div>
+
+      <button class="start-btn">start</button>
+      <button class="reset-btn">reset</button>
+    </article>
+
+    <script>
+      const hrsCount = document.querySelector(".hrs-count");
+      const minCount = document.querySelector(".min-count");
+      const secCount = document.querySelector(".sec-count");
+
+      hrsCount.addEventListener("click", function () {
+        let count = Number(hrsCount.textContent);
+        if (count >= 23) {
+          count = "00";
+        } else {
+          count += 1;
+        }
+        if (count < 10) {
+          hrsCount.innerHTML = "0" + count;
+        } else {
+          hrsCount.innerHTML = count;
+        }
+      });
+
+      minCount.addEventListener("click", function () {
+        let count = Number(minCount.textContent);
+        if (count >= 59) {
+          count = "00";
+        } else {
+          count += 1;
+        }
+        if (count < 10) {
+          minCount.innerHTML = "0" + count;
+        } else {
+          minCount.innerHTML = count;
+        }
+      });
+
+      secCount.addEventListener("click", function () {
+        let count = Number(secCount.textContent);
+        if (count >= 59) {
+          count = "00";
+        } else {
+          count += 1;
+        }
+        if (count < 10) {
+          secCount.innerHTML = "0" + count;
+        } else {
+          secCount.innerHTML = count;
+        }
+      });
+
+      const startBtn = document.querySelector(".start-btn");
+      const resetBtn = document.querySelector(".reset-btn");
+
+      function startButton() {}
+
+      function resetButton() {
+        hrsCount.innerHTML = "00";
+        minCount.innerHTML = "00";
+        secCount.innerHTML = "00";
+      }
+      startBtn.addEventListener("click", startButton);
+      resetBtn.addEventListener("click", resetButton);
+    </script>
+  </body>
+</html>
